@@ -44,7 +44,7 @@ five times where 'n' is replaced by the thread's number. Use an array of pthread
 #include <stdio.h>
 #include <stdlib.h>
 
-#define THREAD_MAX 10
+#define THREAD_MAX 3
 
 void * thread_function (void * arg)
 {
@@ -72,6 +72,37 @@ int main (void)
 
     return 0;
 }
+```
+
+```C
+//실행 결과 ex1-1.c
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 2
+Hello, World This is Thread 2
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+```
+```C
+// ex1-1-join.c 실행결과
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 0
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 1
+Hello, World This is Thread 2
+Hello, World This is Thread 2
+Hello, World This is Thread 2
+Hello, World This is Thread 2
+Hello, World This is Thread 2
 ```
 
 3. 스레드로 부터 값을 전달받기
@@ -120,8 +151,12 @@ Exercise 1.
 
 Write a program that computes the square roots of the integers from 0 to 99 in a separate thread and returns an array of doubles containing the results. In the meantime the main thread should display a short message to the user and then display the results of the computation when they are ready.
 
+```bash
+gcc -o ex2 ex2-1.c -pthread -lm
+```
 ```C
 
+//ex2-1.c 실행 결과
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h> // malloc()
