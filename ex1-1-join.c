@@ -26,7 +26,7 @@ int main (void)
 	for(idx = 0; idx < THREAD_MAX; idx++)
 	{
 		pthread_create(&thread_id[idx], NULL, thread_function, &idx);	
-	//	pthread_join(thread_id[idx], &exit_status[idx]);
+		pthread_join(thread_id[idx], &exit_status[idx]);
 	}
 	//for(cnt = 0 ; cnt < 50; cnt++)	printf("Main Process Executing\n");
 	return 0;
