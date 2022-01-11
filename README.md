@@ -184,7 +184,7 @@ void * thread_function (void * arg)
     return (void *)sqrt_arr;
 }
 // 1부터 100까지의 sqrt 값을 전달하는 스레드
-void * root calculate(void * arg)
+void * root_calculate(void * arg)
 {
     int * incoming = (int *)arg;
     double * rt = (double *)malloc(sizeof(double));
